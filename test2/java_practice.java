@@ -6,7 +6,9 @@ public class java_practice {
 		
 		System.out.println(Math.PI);
 		System.out.println(Math.floor(1.8));
+		System.out.println(Math.floor(1.8));
 
+		
 	}
 
 }
