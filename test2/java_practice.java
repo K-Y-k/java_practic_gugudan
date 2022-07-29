@@ -6,7 +6,7 @@ public class java_practice {
 
 	public static void main(String[] args) {
 		
-		while(true) {  // 전체 반복문
+		while(true) {  // 전체 무한 반복문
 			System.out.println("구구단을 이용할 메뉴를 선택해주세요: ");	// 메뉴 선정
 			System.out.println("1. 구구단 출력");	
 			System.out.println("2. 구구단 활용");	
@@ -15,21 +15,23 @@ public class java_practice {
 			int menu = input_menu.nextInt();
 			
 			if(menu == 1) {  // 1번 메뉴
-			   int menu1_result = 0;   // 결과 변수
+			   int menu1_result[] = new int[9];   // 결과 변수
 			   
 			   System.out.printf("출력할 구구단을 입력해주세요: ");	    // 출력할 구구단 선정
 			   Scanner menu1_input_number99 = new Scanner(System.in);
 			   int menu1_number99 = menu1_input_number99.nextInt();
 				
-			   if(menu1_number99 > 0 && menu1_number99 < 10) {  // 1~9인 구구단을 정상 선택 시
-				   for(int i=1; i<10; i++) {  // 사용자가 선택한 구구단 전체 출력
-					   menu1_result = i * menu1_number99;
-					   System.out.println(menu1_result);	
+			   if(menu1_number99 > 1 && menu1_number99 < 10) {  // 1~9인 구구단을 정상 선택 시
+				   for(int i=0; i<menu1_result.length; i++) {  // 사용자가 선택한 구구단 전체 담기
+					   menu1_result[i] = (i+1) * menu1_number99;	
+				   }
+				   for(int i=0; i<menu1_result.length; i++) {  // 사용자가 선택한 구구단 전체 출력
+					   System.out.println(menu1_result[i]);
 				   }
 				   System.out.println("");
 			   }
 			   else {  // 그 외의 숫자 선택시
-				   System.out.println("다시 입력해주세요");
+				   System.out.println("2~9의 구구단만 입력할 수 있습니다. 다시 입력해주세요");
 				   System.out.println("");
 			   }
 			   
