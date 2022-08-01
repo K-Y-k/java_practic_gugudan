@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Gugudan {
 	
 	public static void menu1_gugudan_print() {
-	 	   // 1번 메뉴
+		// 1번 메뉴
 		   int menu1_result[] = new int[9];   // 결과 변수
 		   
 		   System.out.printf("출력할 구구단을 입력해주세요: ");	    // 출력할 구구단 선정
@@ -85,6 +85,49 @@ public class Gugudan {
 				}
 				
 		}
-	
-	
+		
+		
+		public static void menu3_gugudan_calculate() {
+			int menu3_result[] = new int [1000];
+			
+			System.out.printf("구구단 할 숫자를 고르세요: ");	// 곱할 숫자 선정
+			Scanner menu3_input_number = new Scanner(System.in);
+			int menu3_number = menu3_input_number.nextInt();
+			
+			for(int i = 0; i <= menu3_number; i++) {
+				menu3_result[i] = (i+1) * menu3_number;
+			}
+			
+			for(int i = 0; i < menu3_number; i++) {
+				System.out.println(menu3_result[i]);
+			}
+		}
+		
+		
+		public static void menu4_gugudan_calculate() {
+			int menu4_result[] = new int [1000];
+			
+			System.out.printf("곱할 숫자를 입력해주세요 ex) 3,4 입력 시 2*1.. 2*4, 3*1..3*4까지 출력: ");	// 곱할 숫자 선정
+			Scanner menu4_input_number = new Scanner(System.in);
+			String menu4_number = menu4_input_number.next();
+			
+			String[] splitedNumber = menu4_number.split(",");  // ,를 기준으로 문자 분리
+			
+			int first_number = Integer.parseInt(splitedNumber[0]);  // 분리한 문자열 숫자로 변환
+			int second_number = Integer.parseInt(splitedNumber[1]);
+
+			
+			for(int i=2; i <= first_number; i++) {  // 첫 숫자 입력까지 단까지 출력
+				System.out.println(i + "단"); 
+				
+				for(int j=0; j < second_number; j++) {  // 두번째 숫자 입력까지 구구단 진행
+					menu4_result[j] = (j+1) * i;
+					System.out.println(menu4_result[j]);	
+				}
+				
+				System.out.println("");	
+			}
+		}
+		
+		
 }
