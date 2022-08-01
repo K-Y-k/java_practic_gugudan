@@ -94,25 +94,25 @@ public class Gugudan {
 	}
 
 	public static void menu3_gugudan_calculate() {
+		// 3번 메뉴
 		int menu3_result[] = new int[1000];
 
-		System.out.printf("구구단 할 숫자를 고르세요: "); // 곱할 숫자 선정
+		System.out.printf("구구단 할 숫자를 고르세요: ex) 4 입력시 4*1...4*4까지 출력 "); // 출력할 구구단 설정
 		Scanner menu3_input_number = new Scanner(System.in);
 		int menu3_number = menu3_input_number.nextInt();
 
-		for (int i = 0; i <= menu3_number; i++) {
+		for (int i = 0; i <= menu3_number; i++) { // 입력한 값 만큼 구구단 진행
 			menu3_result[i] = (i + 1) * menu3_number;
-		}
-
-		for (int i = 0; i < menu3_number; i++) {
 			System.out.println(menu3_result[i]);
 		}
+
 	}
 
 	public static void menu4_gugudan_calculate() {
+		// 4번 메뉴
 		int menu4_result[] = new int[1000];
 
-		System.out.printf("곱할 숫자를 입력해주세요 ex) 3,4 입력 시 2*1.. 2*4, 3*1..3*4까지 출력: "); // 곱할 숫자 선정
+		System.out.printf("숫자를 입력해주세요 ex) 3,4 입력 시 2*1.. 2*4, 3*1..3*4까지 출력: "); // 곱할 숫자 선정
 		Scanner menu4_input_number = new Scanner(System.in);
 		String menu4_number = menu4_input_number.next();
 
